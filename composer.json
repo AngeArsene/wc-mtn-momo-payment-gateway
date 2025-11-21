@@ -2,7 +2,7 @@
     "name": "all-ready237/wc-mtn-momo-payment-gateway",
     "autoload": {
         "psr-4": {
-            "AllReady237\\WcMtnMomoPaymentGateway\\": "src/"
+            "WcMtnMomoPaymentGateway\\": "src/"
         }
     },
     "authors": [
