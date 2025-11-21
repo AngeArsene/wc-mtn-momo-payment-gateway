@@ -1,0 +1,15 @@
+{
+    "name": "all-ready237/wc-mtn-momo-payment-gateway",
+    "autoload": {
+        "psr-4": {
+            "AllReady237\\WcMtnMomoPaymentGateway\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ange Arsene",
+            "email": "nkenmandenga@gmail.com"
+        }
+    ],
+    "require": {}
+}
