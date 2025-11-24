@@ -11,5 +11,7 @@
             "email": "nkenmandenga@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "maviance/smobilpay-php": "*"
+    }
 }
