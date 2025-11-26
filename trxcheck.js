@@ -31,9 +31,6 @@ function complete() {
 }
 
 function pay() {
-
-
-
 	var xhttp = new XMLHttpRequest();
 
 	xhttp.onreadystatechange = function () {

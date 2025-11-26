@@ -3,6 +3,8 @@
 // In order to prevent direct access to the plugin
 defined('ABSPATH') or die("No access please!");
 
+require_once(__DIR__ . '/vendor/autoload.php');
+
 if (!isset($_SESSION)) {
 	session_start();
 }
@@ -296,7 +298,7 @@ function woomomo_payment_gateway_init()
 				echo "<br/>"; ?>
 
 				<input type="hidden" value="" id="txid" />
-				<?php echo $_SESSION['response_status']; ?>
+				<?php echo $_SESSION['response_status'] ?? null; ?>
 				<div id="commonname"></div>
 				<button onClick="pay()" id="pay_btn">Pay</button>
 				<button onClick="complete()" id="complete_btn">Complete Order</button>
@@ -458,6 +460,7 @@ function woomomo_scan_transactions()
 
 	exit();
 }
+
 ////Scanner end
 function woomomo_insert_transaction($merchant_id)
 {
@@ -474,7 +477,6 @@ function woomomo_insert_transaction($merchant_id)
 		'trx_time' => date("Y-m-d H:i:s")
 	));
 }
-
 
 function woomomo_update_transaction($merchant_id, $rescode, $resdesc)
 {
