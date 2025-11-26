@@ -126,11 +126,13 @@ function woomomo_payment_gateway_init()
 			$_SESSION['cs_momo']   					 = $this->get_option('api_key');
 			$_SESSION['currency']   				 = $this->get_option('currency');
 
-			//Save the admin options
-			if (version_compare(WOOCOMMERCE_VERSION, '2.0.0', '>=')) {
-				add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
-			} else {
-				add_action('woocommerce_update_options_payment_gateways', array($this, 'process_admin_options'));
+			if (defined('WC_VERSION')) {
+				//Save the admin options
+				if (version_compare(WC_VERSION, '2.0.0', '>=')) {
+					add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
+				} else {
+					add_action('woocommerce_update_options_payment_gateways', array($this, 'process_admin_options'));
+				}
 			}
 			add_action('woocommerce_receipt_momo', array($this, 'receipt_page'));
 		}
